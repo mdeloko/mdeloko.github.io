@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Montserrat, sans-serif, system-ui;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: normal;
+  font-size: 16px;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -13,45 +15,35 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  /* border: 2px solid red; */
 }
-a:hover {
-  color: #535bf2;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* display: flex;
+  place-items: start center; */
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+main{
+  flex-grow: 1;
+  padding: calc(4vh + var(--navbar-min-height)) 5vw 0;
+  margin-bottom: 4vh;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (prefers-color-scheme: light) {
@@ -64,5 +56,54 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+/* Celular Médio */
+@media (min-width:410px) and (orientation: portrait){
+    
+}
+
+/* Tablet */
+@media (min-width:768px) and (orientation: portrait){
+  :root{
+    font-size: 20px;
+  }
+  main{
+    padding: calc(4vh + var(--navbar-min-height)) 10vw 0;
+  }
+}
+
+/* Notebook */
+@media (min-width:1024px) and (orientation: landscape){
+  :root{
+    font-size: 16px;
+  }
+  main{
+    padding: calc(4vh + var(--navbar-min-height)) 20vw 0;
+  }
+}
+
+/* 1080p */
+@media (min-width:1920px) and (orientation: landscape){
+  :root{
+    font-size: 18px;
+  }
+  main{
+    padding: calc(4vh + var(--navbar-min-height)) 25vw 0;
+  }
+}
+
+/* 1440p (2K) */
+@media (min-width:2560px) and (orientation: landscape){
+  :root{
+    font-size: 20px;
+  }
+}
+
+/* 2160p (4K) */
+@media (min-width:3840px) and (orientation: landscape){
+  :root{
+    font-size: 28px;
   }
 }
