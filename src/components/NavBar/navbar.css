@@ -1,0 +1,296 @@
+@import url(../../colors.css);
+:root{
+    --navbar-min-height: 14vh;
+    --underline-height: 2px;
+}
+
+.hide-btn{
+    display: none !important;
+}
+
+.hide-menu{
+    transform: translateX(101vw);
+}
+
+.stop-scroll{
+    overflow: hidden;
+    overscroll-behavior-y: contain;
+}
+
+.top-nav-hide{
+    transform: translateY(calc(-1 * var(--navbar-min-height) - 2vw));
+    filter: none;
+}
+
+#top-nav{
+    background-color: var(--primary);
+    min-height: var(--navbar-min-height);
+    width: 100vw;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    padding: 1vh 5vw;
+    
+    display:flex;
+    flex-direction: row;
+    
+    align-items: center;
+    
+    justify-content: space-between;
+    
+    color: var(--text-light);
+    
+    filter: drop-shadow(rgba(0,0,0,0.25) 0px 4px 3px);
+    transition: all 0.2s;
+
+    z-index: 1000;
+    h1{
+        font-size: 1.8rem;
+    }
+
+    #logo {
+        font-size: 1.8rem;
+        line-height: 1;
+        a{
+            display: flex;
+            gap:5px;
+            text-decoration: none;
+            color: inherit;
+        }
+        &:focus,&:active{
+            outline: none;
+            border: none;
+        }
+        filter: drop-shadow(rgba(0,0,0,0.7) 4px 4px 3px);
+    }
+
+    button{
+        display: flex;
+        background: var(--primary);
+        font-size: 1.8rem;
+        padding: .1rem;
+        border: 1px var(--text-light) solid;
+        border-radius: 8px;
+        filter: drop-shadow(rgba(0,0,0,0.5) 4px 4px 3px);
+        &:focus{
+            outline: none;
+            accent-color: none;
+            background-color: var(--text-light);
+            color:var(--primary);
+            border-color: var(--primary);
+            transition: all .1s;
+        }
+    }
+
+    #mobile-menu{
+        background-color: rgba(var(--racing-red-rgb), 0.85);
+
+        width: 100vw;
+        height: 100vh;
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 1.4rem;
+        font-weight: 600;
+        gap:8vh;
+        transition: all .2s;
+        overflow: hidden;
+        overscroll-behavior-y: contain;
+
+        a{
+            text-decoration: none;
+            color: var(--text-light);
+        }
+        a:hover,a:focus{
+            font-weight: bold;
+        }
+    }
+
+    #desktop{
+        display:none;
+        width: 40vw;
+        flex-direction: row;
+        justify-content: space-evenly;
+        a{
+            text-decoration: none;
+            color: var(--text-light);
+            transition: all 0.35s;
+            position:relative;
+            padding: 1vw;
+            
+            &:hover,&:focus{
+                font-weight: 700;
+            }
+            &::after{
+                content: '';
+                height: var(--underline-height);
+                width: 100%;
+                background-color: var(--text-light);
+                position:absolute;
+                left:0;
+                bottom:-1vh;
+                opacity:0;
+                pointer-events: none;
+            }
+            &:hover::after,&:focus::after{
+                opacity:1;
+            }
+        }
+    }
+}
+/* Celular Médio */
+@media (min-width:410px) and (orientation: portrait){
+    :root{
+        --navbar-min-height: 12vh;
+    }
+    #top-nav{
+        padding: 2vh 7vw;
+        h1{
+            font-size: 2.2rem;
+        }
+        #logo{
+            font-size: 2.2rem;
+        }
+        button{
+            font-size: 2.4rem;
+        }
+        a{
+            font-size: 2rem;
+        }
+    }
+}
+/* Tablet */
+@media (min-width:768px) and (orientation: portrait){
+    :root{
+        --navbar-min-height: 13vh;
+    }
+    #top-nav{
+        padding: 2vh 8vw;
+        h1{
+            font-size: 2.6rem;
+        }
+        #logo>a{
+            font-size: 2.6rem;
+        }
+        #mobile-menu{
+            left:30vw;
+            width: 70vw;
+            /* border-left: 2px solid black; */
+        }
+        button{
+            font-size: 2.8rem;
+        }
+        a{
+            font-size: 2rem;
+        }
+    }
+}
+
+/* Notebook */
+@media (min-width:1024px) and (orientation: landscape){
+    :root{
+        --navbar-min-height: 11vh;
+    }
+    #top-nav{
+        padding: 2vh 10vw;
+    }
+    #desktop{
+        display: flex !important;
+        a{
+            &::after{
+                bottom: -2.1vh !important;
+            }
+        }
+    }
+    #mobile{
+        display:none;
+    }
+}
+
+/* 1080p */
+@media (min-width:1920px) and (orientation: landscape){
+    :root{
+        --navbar-min-height: 10vh;
+    }
+    #desktop{
+        a{
+            &::after{
+                bottom: -1.65vh !important;
+            }
+        }
+    }
+    #top-nav{
+        padding: 1.5vh 8vw;
+        h1{
+            font-size: 2rem;
+        }
+        #logo>a{
+            font-size: 2rem;
+        }
+        a{
+            font-size: 1.4rem;
+        }
+    }
+}
+/* 1440p (2K) */
+@media (min-width:2560px) and (orientation: landscape){
+    :root{
+        --navbar-min-height: 8vh;
+        --underline-height: 4px;
+    }
+    #desktop{
+        a{
+            &::after{
+                bottom: -1vh !important;
+            }
+        }
+    }
+    #top-nav{
+        padding: 1vh 8vw;
+        h1{
+            font-size: 2.2rem;
+        }
+        #logo>a{
+            font-size: 2.2rem;
+        }
+        a{
+            font-size: 1.8rem;
+        }
+    }
+}
+
+/* 2160p (4K) */
+@media (min-width:3840px) and (orientation: landscape){
+    :root{
+        --navbar-min-height: 8.5vh;
+        --underline-height: 6px;
+    }
+    #desktop{
+        a{
+            &::after{
+                bottom: -1.25vh !important;
+            }
+        }
+    }
+    #top-nav{
+        padding: 1vh 8vw;
+        h1{
+            font-size: 3rem;
+        }
+        #logo>a{
+            font-size: 3rem;
+        }
+        a{
+            font-size: 2.2rem;
+        }
+    }
+}
