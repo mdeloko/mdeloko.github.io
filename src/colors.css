@@ -1,0 +1,14 @@
+:root {
+	--primary: var(--racing-red);
+	--highlight: #ff0d27;
+
+	--text-light: #e3e3e3;
+	--text-dark: var(--ink-black);
+
+	--racing-red-rgb: 255, 13, 39;
+	--racing-red: rgb(var(--racing-red-rgb));
+	--ink-black: rgb(17, 21, 28);
+	--ebony: rgb(98, 109, 88);
+	--silver: rgb(197, 186, 175);
+	--coffee-bean: rgb(26, 17, 16);
+}
