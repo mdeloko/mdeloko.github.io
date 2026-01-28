@@ -60,6 +60,7 @@ export default function NavBar(){
             </button>
             <div id='mobile-menu' className='hide-menu'>
                 <Link to={'/'} onClick={handleLinkClick}>Início</Link>
+                <Link to={'/sobre'} onClick={handleLinkClick}>Sobre</Link>
                 <Link to={'/cursos-e-formacoes'} onClick={handleLinkClick}>Formações</Link>
                 <Link to={'/projetos'} onClick={handleLinkClick}>Projetos</Link>
                 <Link to={'/contatos'} onClick={handleLinkClick}>Contatos</Link>
@@ -68,6 +69,7 @@ export default function NavBar(){
         </div>
         <div id="desktop">
             <Link to={'/'} onClick={handleLinkClick}>Início</Link>
+            <Link to={'/sobre'} onClick={handleLinkClick}>Sobre</Link>
             <Link to={'/cursos-e-formacoes'} onClick={handleLinkClick}>Formações</Link>
             <Link to={'/projetos'} onClick={handleLinkClick}>Projetos</Link>
             <Link to={'/contatos'} onClick={handleLinkClick}>Contatos</Link>

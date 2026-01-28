@@ -4,7 +4,8 @@ footer{
     flex-direction: column;
     width: 100vw;
     height: 8vh;
-    background-color: var(--racing-red);
+    background-color: var(--border-dark);
+    color:var(--text-light-1);
     font-size: var(--footer-font-size);
     line-height: 1.25;
     justify-content: center;
