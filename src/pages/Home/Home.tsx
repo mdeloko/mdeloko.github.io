@@ -1,62 +1,69 @@
-import "./Home.css";
-import NavBar from "../../components/NavBar/navbar";
-import Footer from "../../components/Footer/footer";
-import pfpJpg from "../../assets/MVIMG_20250718_143304.jpg";
-import pfp2k from "../../assets/PFP.webp";
-import pfpFhd from "../../assets/PFP FHD.webp";
-import pfpHd from "../../assets/PFP HD.webp";
+import "./Home.css"
+import NavBar from "../../components/NavBar/navbar"
+import Footer from "../../components/Footer/footer"
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { FaLinkedin,FaSquareGithub,FaSquareInstagram, FaEnvelope, FaClipboardCheck } from "react-icons/fa6";
 
-export default function Home() {
-	return (
-		<>
-			<NavBar />
-			<main>
-				<h1 className="title">Sobre Mim</h1>
-				<picture id="picture-pfp">
-					<source
-						media="(min-width: 2560px)"
-						srcSet={pfp2k}
-					/>
-					<source
-						media="(min-width: 1281px)"
-						srcSet={pfpFhd}
-					/>
-					<source
-						media="(max-width: 1280px)"
-						srcSet={pfpHd}
-					/>
-					<img
-						src={pfpJpg}
-						id="pfp"
-						alt="Foto de perfil de Erik."
-					/>
-				</picture>
+const frases = ["desenvolvedor","guitarrista","apaixonado por tecnologia","streamer"];
+const intervalo = 3000;
 
-				<h2 id="bio">Bio</h2>
-				<p>Tenho 22 anos, sou apaixonado por tecnologia desde meados de 2013, quando ganhei meu primeiro computador 
-					(um Core 2 Duo E7500 sem <abbr title="Placa de vídeo">GPU</abbr> e com 4GB de RAM) e me esforçava pra rodar os jogos que eu 
-					curtia nele. E por conta dessa paixão trabalhei junto à minha mãe vendendo cones trufados e pipocas <i>gourmet</i> para 
-					juntar dinheiro e comprar meu primeiro PC efetivamente para jogos... Com este peguei gosto por programar e 
-					entender o funcionamento básico de computadores, então me formei técnico em informática pelo <abbr title="Instituto Federal do Paraná">IFPR
-					</abbr> &#8212; câmpus Londrina e atualmente estou graduando em engenharia 
-					de computação pela <abbr title="Universidade Tecnológica Federal do Paraná">UTFPR</abbr> &#8212; câmpus Cornélio Procópio.
-				</p>
-				
-				<h2>Objetivo Profissional</h2>
-				<p>
-					Iniciar minha carreira de desenvolvedor como estagiário ou trainee, em uma das áreas que mais gosto 
-					(Web, Jogos, Infra &#8212; DevOps) para um dia ser um tech lead / sênior respeitável na área.
-				</p>
+export default function Home(){
+    const [frase,setFrase] = useState(frases[0])
+    const i = useRef(0)
+    const modalTimeRef = useRef<number>(0)
 
-				<h2>Hobbies</h2>
-				<p>
-					No meu tempo livre gosto de jogar, fazer lives, tocar uma guitarra e aprender coisas novas, seja em 
-					tecnologia ou outras áreas!
-				</p>
+    
+    useEffect(()=>{
+        const intervalId = setInterval(function(){
+            i.current++
+            if( i.current == frases.length ) i.current=0;
+            setFrase(frases[i.current])
+        },intervalo)
+        return ()=>clearInterval(intervalId);
+    },[])
 
-				<h2></h2>
-			</main>
-			<Footer/>
-		</>
-	);
+    function handleMailClick(e:React.MouseEvent<HTMLAnchorElement,MouseEvent>){
+        e.preventDefault();
+        const email = "erikgcoutinho03@gmail.com";
+        navigator.clipboard.writeText(email);
+        window.location.href = `mailto:${email}`
+        const dialog = document.getElementById('email-notification') as HTMLDialogElement | null
+
+        if(modalTimeRef.current) clearTimeout(modalTimeRef.current);
+
+        dialog?.showModal()
+        modalTimeRef.current = setTimeout(function(){
+            dialog?.close();
+        },3000)
+    }
+
+    return(<>
+        <NavBar/>
+        <main>
+            <h1 className="title">Erik G. Coutinho</h1>
+            <h3 id="desc-title">Sou <b key={frase} id="frase" className="text-animate">{frase}</b></h3>
+
+            <hr id="home-division-bar"/>
+            <svg width="0" height="0" style={{ position: "absolute" }}>
+                <linearGradient id="instagram-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
+                    <stop stopColor="#6228d7" offset="0%" />
+                    <stop stopColor="#ee2a7b" offset="50%" />
+                    <stop stopColor="#f9ce34" offset="100%" />
+                </linearGradient>
+            </svg>
+
+            <div id="home-social-container">
+                <Link id="linkedin" to="https://linkedin.com/in/erik-gc" target="_blank"><FaLinkedin/></Link>
+                <Link id="github" to="https://github.com/mdeloko" target="_blank"><FaSquareGithub/></Link>
+                <Link id="instagram" to="https://instagram.com/erik.coutinho03" target="_blank"><FaSquareInstagram /></Link>
+                <Link id="email" to="#" onClick={handleMailClick} rel="noopener noreferrer"><FaEnvelope/></Link>
+            </div>
+            <dialog id="email-notification">
+                <FaClipboardCheck/>
+                <p>E-mail copiado para área de transferência!</p>
+            </dialog>
+        </main>
+        <Footer/>
+    </>)
 }
