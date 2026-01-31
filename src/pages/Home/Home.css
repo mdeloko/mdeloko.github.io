@@ -71,9 +71,9 @@
 
 #email-notification{
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translateX(-50%);
     width: 80%;
     height: 15%;
     padding: 1rem;
@@ -84,10 +84,14 @@
     
     border: var(--border-light) 2px solid;
     border-radius: 1rem;
-    backdrop-filter: blur(56px);
     background-color: var(--border-dark);
     font-size: 2rem;
     line-height: 1.25;
+    overflow:hidden;
+    &::backdrop{
+        transition: all .2s ease-in-out;
+        backdrop-filter: blur(4px);
+    }
     p{
         text-align: left;
         align-self: center;
@@ -98,4 +102,84 @@
     &:open{
         display: flex;
     }
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        height: .5vh;
+        background-color: var(--text-light-1);
+        width:100%;
+        animation: charge-bar 2.85s linear forwards;
+    }
 }
+
+@keyframes charge-bar{
+    from{
+        width: 100%;
+    }
+    to{
+        width: 0%;
+    }
+}
+.pagina-home{
+    margin-bottom: 25vh;
+}
+
+/* Celular Médio */
+@media (min-width:410px) and (orientation: portrait){
+    .pagina-home{
+      padding: 5vw;
+      margin-bottom: 40vh;
+    }
+}
+
+/* Tablet */
+@media (min-width:768px) and (orientation: portrait){
+    #email-notification{
+        width: 50%;
+        height: 10%;
+        top:20%;
+    }
+}
+
+/* iPadPro */
+@media (min-width:1024px) and (orientation: portrait){
+    #email-notification{
+        width: 40%;
+        height: 8%;
+        top:20%;
+    }
+    .pagina-home{
+        margin: calc(4vh + var(--navbar-min-height)) 10vw 45vh;
+    }
+}
+
+/* Notebook */
+@media (min-width:1024px) and (orientation: landscape){
+    #email-notification{
+        top:10%;
+        height: 10%;
+        width: 20%;
+    }
+    .pagina-home{
+        margin: calc(4vh + var(--navbar-min-height)) 20vw 45vh;
+    }
+}
+
+@media (min-width:1920px) and (orientation:landscape){
+    .pagina-home{
+        margin: calc(4vh + var(--navbar-min-height)) 25vw 50vh;
+    }
+}
+
+/* 1440p (2K) */
+@media (min-width:2560px) and (orientation: landscape){
+    #email-notification{
+        height: 8%;
+        width: 15%;
+    }
+}
+
+/* 2160p (4K) */
+@media (min-width:3840px) and (orientation: landscape){}

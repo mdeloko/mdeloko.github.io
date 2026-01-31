@@ -48,25 +48,40 @@ body::-webkit-scrollbar-thumb{
 
 main{
   flex-grow: 1;
-  padding: calc(4vh + var(--navbar-min-height)) 5vw 0;
-  margin-bottom: 4vh;
+  margin: calc(4vh + var(--navbar-min-height)) 5vw 4vh;
+  padding: 1vw;
+  background-color: rgba(0,0,0,.2);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   position: relative;
+  align-items: flex-start;
+}
+
+hr{
+  border-color: var(--text-light-2);
+  border-style: solid;
+}
+
+/* LightMode */
+@media (prefers-color-scheme: light){
+  main{
+    background-color: rgba(200,200,200,.2);
+  }
+  hr{
+    border-color: var(--lm-text-dark-1);
+  }
 }
 
 /* Celular Médio */
 @media (min-width:410px) and (orientation: portrait){
-    
 }
 
 /* Tablet */
 @media (min-width:768px) and (orientation: portrait){
   :root{
     font-size: 20px;
-  }
-  main{
-    padding: calc(4vh + var(--navbar-min-height)) 10vw 0;
   }
 }
 
@@ -75,18 +90,12 @@ main{
   :root{
     font-size: 16px;
   }
-  main{
-    padding: calc(4vh + var(--navbar-min-height)) 20vw 0;
-  }
 }
 
 /* 1080p */
 @media (min-width:1920px) and (orientation: landscape){
   :root{
     font-size: 18px;
-  }
-  main{
-    padding: calc(4vh + var(--navbar-min-height)) 25vw 0;
   }
 }
 
@@ -100,6 +109,6 @@ main{
 /* 2160p (4K) */
 @media (min-width:3840px) and (orientation: landscape){
   :root{
-    font-size: 28px;
+    font-size: 32px;
   }
 }

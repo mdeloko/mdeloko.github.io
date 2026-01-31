@@ -15,7 +15,7 @@
     }
 }
 .title{
-    justify-self: center;
+    justify-self: start;
     filter: drop-shadow(black 5px 4px 3px);
     font-size: 2.5rem;
 }
@@ -28,7 +28,7 @@
     width: 2px;
     position: absolute;
     top:0.3rem;
-    left: 2.65rem;
+    right: -0.2rem;
     background-color: var(--text-light-1);
     animation-name: blinking;
     animation-duration: .6s;
@@ -50,8 +50,16 @@ abbr{
     cursor: help;
 }
 
+.pagina-sobre{
+    margin: calc(4vh + var(--navbar-min-height)) 5vw 4vh;
+    padding: 1rem;
+}
+
 /* Light Mode */
 @media (prefers-color-scheme: light){
+    #picture-pfp{
+        filter: drop-shadow(var(--border-dark) 0px 0px 2px) drop-shadow(black 0px 8px 5px);
+    }
     .title{
         filter: drop-shadow(rgba(0,0,0,.3) 3px 3px 3px);
         color: var(--lm-text-dark-2);
@@ -73,12 +81,19 @@ abbr{
     #pfp{
         width: 35%;
     }
+    .pagina-sobre{
+        padding: 1.4rem;
+    }
 }
 
 /* Notebook */
 @media (min-width:1024px) and (orientation: landscape){
     #pfp{
         width: 25%;
+    }
+    .pagina-sobre{
+        margin: calc(4vh + var(--navbar-min-height)) 25vw 4vh;
+        padding: 1rem;
     }
 }
 
