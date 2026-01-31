@@ -11,7 +11,6 @@ export default function NavBar(){
         const menuDiv = document.getElementById('mobile-menu')
         const menuBtn = document.getElementById("menu-btn")
         const body = document.querySelector("body")
-        console.log(body)
         if (menuBtn && menuDiv&&body){
             menuBtn.classList.toggle("hide-btn")
             menuDiv.classList.toggle("hide-menu")
@@ -60,7 +59,7 @@ export default function NavBar(){
             </button>
             <div id='mobile-menu' className='hide-menu'>
                 <Link to={'/'} onClick={handleLinkClick}>Início</Link>
-                <Link to={'/sobre'} onClick={handleLinkClick}>Sobre</Link>
+                <Link to={'/sobre'} onClick={handleLinkClick}>Sobre Mim</Link>
                 <Link to={'/cursos-e-formacoes'} onClick={handleLinkClick}>Formações</Link>
                 <Link to={'/projetos'} onClick={handleLinkClick}>Projetos</Link>
                 <Link to={'/contatos'} onClick={handleLinkClick}>Contatos</Link>
@@ -69,7 +68,7 @@ export default function NavBar(){
         </div>
         <div id="desktop">
             <Link to={'/'} onClick={handleLinkClick}>Início</Link>
-            <Link to={'/sobre'} onClick={handleLinkClick}>Sobre</Link>
+            <Link to={'/sobre'} onClick={handleLinkClick}>Sobre Mim</Link>
             <Link to={'/cursos-e-formacoes'} onClick={handleLinkClick}>Formações</Link>
             <Link to={'/projetos'} onClick={handleLinkClick}>Projetos</Link>
             <Link to={'/contatos'} onClick={handleLinkClick}>Contatos</Link>

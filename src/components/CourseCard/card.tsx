@@ -19,14 +19,16 @@ export default function CourseCard({
     
     return(
         <>
-            <div className="card">
-                <h5>{name}</h5>
-                <b>Instituição:</b> {institution} <br />
-                <b>Nível:</b> {grade} <br />
-                <b>Início em:</b> {start_date.toLocaleDateString("pt-BR",{dateStyle:"short"})} <br />
-                {conclusion_date?(<>
-                <b>Concluído em:</b> {conclusion_date.toLocaleDateString("pt-BR",{dateStyle:"short"})}
-                </>):<><b>Em andamento...</b></>}
+            <div className="embla__slide">
+                <div className="card" >
+                    <h3>{name}</h3>
+                    <p><b>Instituição:</b> {institution}</p>
+                    <p><b>Nível:</b> {grade}</p>
+                    <p><b>Início em:</b> {start_date.toLocaleDateString("pt-BR",{dateStyle:"short"})}</p>
+                    {conclusion_date?(<>
+                    <p><b>Concluído em:</b> {conclusion_date.toLocaleDateString("pt-BR",{dateStyle:"short"})}</p>
+                    </>):<><b>Em andamento...</b></>}
+                </div>
             </div>
         </>
     )
