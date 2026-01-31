@@ -1,6 +1,5 @@
 import "./Home.css"
-import NavBar from "../../components/NavBar/navbar"
-import Footer from "../../components/Footer/footer"
+
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaLinkedin,FaSquareGithub,FaSquareInstagram, FaEnvelope, FaClipboardCheck } from "react-icons/fa6";
@@ -9,8 +8,8 @@ const frases = ["desenvolvedor","guitarrista","apaixonado por tecnologia","strea
 const intervalo = 3000;
 
 export default function Home(){
-    const [frase,setFrase] = useState(frases[0])
-    const i = useRef(0)
+    const [frase,setFrase] = useState<string>(frases[0])
+    const i = useRef<number>(0)
     const modalTimeRef = useRef<number>(0)
 
     
@@ -35,12 +34,10 @@ export default function Home(){
         dialog?.showModal()
         modalTimeRef.current = setTimeout(function(){
             dialog?.close();
-        },3000)
+        },intervalo)
     }
 
     return(<>
-        <NavBar/>
-        <main>
             <h1 className="title">Erik G. Coutinho</h1>
             <h3 id="desc-title">Sou <b key={frase} id="frase" className="text-animate">{frase}</b></h3>
 
@@ -54,16 +51,14 @@ export default function Home(){
             </svg>
 
             <div id="home-social-container">
-                <Link id="linkedin" to="https://linkedin.com/in/erik-gc" target="_blank"><FaLinkedin/></Link>
-                <Link id="github" to="https://github.com/mdeloko" target="_blank"><FaSquareGithub/></Link>
-                <Link id="instagram" to="https://instagram.com/erik.coutinho03" target="_blank"><FaSquareInstagram /></Link>
-                <Link id="email" to="#" onClick={handleMailClick} rel="noopener noreferrer"><FaEnvelope/></Link>
+                <Link id="linkedin" to="https://linkedin.com/in/erik-gc" target="_blank" aria-label="Linkedin"><FaLinkedin/></Link>
+                <Link id="github" to="https://github.com/mdeloko" target="_blank" aria-label="Github"><FaSquareGithub/></Link>
+                <Link id="instagram" to="https://instagram.com/erik.coutinho03" target="_blank" aria-label="Instagram"><FaSquareInstagram /></Link>
+                <Link id="email" to="#" onClick={handleMailClick} rel="noopener noreferrer" aria-label="Enviar email"><FaEnvelope/></Link>
             </div>
             <dialog id="email-notification">
                 <FaClipboardCheck/>
                 <p>E-mail copiado para área de transferência!</p>
             </dialog>
-        </main>
-        <Footer/>
     </>)
 }
