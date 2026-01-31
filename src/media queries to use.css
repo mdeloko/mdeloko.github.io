@@ -1,0 +1,20 @@
+/* Light Mode*/
+@media (prefers-color-scheme: light) {}
+
+/* Celular Médio */
+@media (min-width:410px) and (orientation: portrait){}
+
+/* Tablet */
+@media (min-width:768px) and (orientation: portrait){}
+
+/* Notebook */
+@media (min-width:1024px) and (orientation: landscape){}
+
+/* 1080p */
+@media (min-width:1920px) and (orientation: landscape){}
+
+/* 1440p (2K) */
+@media (min-width:2560px) and (orientation: landscape){}
+
+/* 2160p (4K) */
+@media (min-width:3840px) and (orientation: landscape){}
