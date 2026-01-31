@@ -7,6 +7,11 @@
   "repository": {
     "url": "https://github.com/mdeloko/mdeloko.github.io"
   },
+  "imports": {
+    "#/*": "./src/*",
+    "#components/*": "./src/components/*",
+    "#assets/*": "./src/assets/*"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -14,6 +19,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tsparticles/all": "^3.9.1",
+    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/react": "^3.0.0",
+    "embla-carousel-accessibility": "9.0.0-rc01",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",
@@ -25,6 +36,7 @@
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react-swc": "^4.2.2",
+    "embla-carousel": "^8.6.0",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
@@ -38,7 +50,9 @@
       "vite": "npm:rolldown-vite@7.2.5"
     },
     "onlyBuiltDependencies": [
-      "@swc/core"
+      "@swc/core",
+      "@tsparticles/engine"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.28.2+sha512.41872f037ad22f7348e3b1debbaf7e867cfd448f2726d9cf74c08f19507c31d2c8e7a11525b983febc2df640b5438dee6023ebb1f84ed43cc2d654d2bc326264"
 }
