@@ -46,7 +46,6 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    /* background: var(--lm-bg-light-white); */
     background: linear-gradient(to top, var(--lm-bg-light-white), 90%, var(--lm-border-medium));
 	color: var(--lm-text-dark-2);
   }
