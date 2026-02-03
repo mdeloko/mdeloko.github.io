@@ -1,8 +1,8 @@
 import "./Sobre.css";
-import pfpJpg from "#assets/MVIMG_20250718_143304.jpg";
-import pfp2k from "#assets/PFP.webp";
-import pfpFhd from "#assets/PFP FHD.webp";
-import pfpHd from "#assets/PFP HD.webp";
+import pfpJpg from "@/assets/pfps/MVIMG_20250718_143304.jpg";
+import pfp2k from "@/assets/pfps/PFP.webp";
+import pfpFhd from "@/assets/pfps/PFP FHD.webp";
+import pfpHd from "@/assets/pfps/PFP HD.webp";
 
 export default function Sobre() {
 	return (<>
