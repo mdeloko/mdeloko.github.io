@@ -211,12 +211,12 @@
     }
     #top-nav{
         padding: 2vh 10vw;
-    }
-    #desktop{
-        display: flex !important;
-        a{
-            &::after{
-                bottom: -2.1vh !important;
+        #desktop{
+            display: flex;
+            a{
+                &::after{
+                    bottom: -2.1vh;
+                }
             }
         }
     }
@@ -230,13 +230,6 @@
     :root{
         --navbar-min-height: 10vh;
     }
-    #desktop{
-        a{
-            &::after{
-                bottom: -1.65vh !important;
-            }
-        }
-    }
     #top-nav{
         padding: 1.5vh 8vw;
         h1{
@@ -245,9 +238,14 @@
         #logo>a{
             font-size: 2rem;
         }
-        a{
-            font-size: 1.4rem;
-        }
+        #desktop{
+            a{
+                font-size: 1.4rem;
+                &::after{
+                    bottom: -1.65vh;
+                }
+            }
+    }
     }
 }
 /* 1440p (2K) */
@@ -255,13 +253,6 @@
     :root{
         --navbar-min-height: 8vh;
         --underline-height: 4px;
-    }
-    #desktop{
-        a{
-            &::after{
-                bottom: -1vh !important;
-            }
-        }
     }
     #top-nav{
         padding: 1vh 8vw;
@@ -271,8 +262,13 @@
         #logo>a{
             font-size: 2.2rem;
         }
-        a{
-            font-size: 1.8rem;
+        #desktop{
+            a{
+                font-size: 1.8rem;
+                &::after{
+                    bottom: -1vh;
+                }
+            }
         }
     }
 }
@@ -283,13 +279,6 @@
         --navbar-min-height: 8.5vh;
         --underline-height: 6px;
     }
-    #desktop{
-        a{
-            &::after{
-                bottom: -1.25vh !important;
-            }
-        }
-    }
     #top-nav{
         padding: 1vh 8vw;
         h1{
@@ -298,8 +287,13 @@
         #logo>a{
             font-size: 2.4rem;
         }
-        a{
-            font-size: 2rem;
+        #desktop{
+            a{
+                font-size: 2rem;
+                &::after{
+                    bottom: -1.25vh !important;
+                }
+            }
         }
     }
 }
