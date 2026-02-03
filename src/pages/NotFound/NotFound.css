@@ -34,3 +34,28 @@
 #not-found-title{
     text-align: center;
 }
+.pagina-not-found{
+    padding: 1rem;
+    margin-bottom: 40vh;
+}
+
+/* Tablet */
+@media (min-width:768px) and (orientation: portrait){
+    #not-found-title{
+        align-self: center;
+    }
+    .pagina-not-found{
+        margin: calc(4vh + var(--navbar-min-height)) 10vw 55vh;
+    }
+}
+
+/* Notebook */
+@media (min-width:1024px) and (orientation: landscape){
+    #not-found-title{
+        align-self: center;
+    }
+    .pagina-not-found{
+        padding: 2rem;
+        margin: calc(4vh + var(--navbar-min-height)) 20vw 45vh;
+    }
+}
