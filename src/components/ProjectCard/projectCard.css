@@ -80,3 +80,17 @@
         text-indent: 1.8rem;
     }
 }
+
+/* 1440p (2K) */
+@media (min-width:2560px) and (orientation: landscape){
+    .project-card{
+        max-height: 600px;
+    }
+}
+
+/* 2160p (4K) */
+@media (min-width:3840px) and (orientation: landscape){
+    .project-card{
+        max-height: 900px;
+    }
+}
