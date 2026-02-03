@@ -1,4 +1,4 @@
-import { FaLinkedin,FaSquareGithub,FaSquareInstagram, FaEnvelope } from "react-icons/fa6";
+import { FaLinkedin,FaSquareGithub,FaSquareInstagram, FaEnvelope,FaDiscord } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import "./contatos.css";
 
@@ -31,7 +31,13 @@ export default function Contatos(){
                 rel="noopener noreferrer"
                 target="_blank"
                 id="email"
-            ><span className="color-change">&lt;</span><FaEnvelope className="color-change"/>@gmail.com<span className="color-change">&gt;</span></Link><br />
+            ><span className="color-change">&lt;</span><FaEnvelope className="color-change"/>@gmail.com<span className="color-change">&gt;</span></Link>
+            <Link
+                to="https://discord.com/users/342815412481687552"
+                rel="noopener noreferrer"
+                target="_blank"
+                id="discord"
+            ><span className="color-change">&lt;</span><FaDiscord className="color-change"/>@mdeloko<span className="color-change">&gt;</span></Link>
         </section>
         <svg width="0" height="0" style={{ position: "absolute" }}>
             <linearGradient id="instagram-gradient" x1="100%" y1="100%" x2="0%" y2="0%">

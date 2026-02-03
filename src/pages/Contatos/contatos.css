@@ -20,6 +20,10 @@
         line-height: 1.5;
         display: flex;
         align-items: center;
+        gap:3px;
+        svg{
+            font-size: 2.5rem;
+        }
     }
     a:hover, a:focus{
         transform: translateY(-.2rem);
@@ -50,6 +54,20 @@
     #email:hover .color-change,
     #email:focus .color-change{
         color: var(--border-light);
+    }
+    #discord:hover .color-change,
+    #discord:focus .color-change{
+        color: #5865f2;
+    }
+}
+@media (prefers-color-scheme: light){
+    #contacts-section{
+        a{
+            color: var(--lm-text-dark-1);
+        }
+        a:visited{
+            color: var(--lm-text-dark-1);
+        }
     }
 }
 
