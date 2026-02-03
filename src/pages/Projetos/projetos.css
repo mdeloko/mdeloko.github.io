@@ -1,0 +1,40 @@
+.pagina-projetos{
+    padding: 1rem 1rem 3rem;
+}
+#mobile{
+    display:flex;
+    flex-direction: column;
+}
+#desktop{
+    display: none;
+}
+
+/* Tablet */
+@media (min-width:768px) and (orientation: portrait){
+    .pagina-projetos{
+        padding: 2rem;
+        margin: calc(4vh + var(--navbar-min-height)) 10vw 4vh;;
+    }
+}
+
+/* Notebook */
+@media (min-width:1024px) and (orientation: landscape){
+    .pagina-projetos{
+        padding: 2rem;
+        margin: calc(4vh + var(--navbar-min-height)) 25vw 4vh;;
+    }
+    #mobile{
+        display: none;
+    }
+    #desktop{
+        display:grid;
+        justify-content: center;
+    }
+    .project-grid{
+        margin: 0 auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: min-content;
+        grid-auto-flow: row;
+        gap: 1rem;
+    }
+}
