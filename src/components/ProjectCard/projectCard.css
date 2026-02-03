@@ -1,0 +1,72 @@
+.project-card-thumb{
+    width:80%;
+    height: auto;
+}
+.project-card-title{
+    margin: .5rem 0 .2rem;
+    text-align: center;
+}
+
+.stacks{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:0.3rem;
+    flex-wrap: wrap;
+    margin: .4rem 0 .1rem;
+    &:first-child{
+        justify-self: left;
+    }
+    p{
+        line-height: 1;
+        background-color: var(--primary-light);
+        border-radius: .2rem;
+        padding: 0.3rem;
+    }
+}
+.repo-button{
+    position: absolute;
+    top:.5rem; left:1.5rem;
+    display: flex;
+    gap:3px;
+    padding: .5rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text-light-1);
+
+    background-color: var(--border-dark);
+    border-radius: 1.2rem;
+    border: var(--border-light) solid 2px;
+
+    transition: all .2s ease-in-out;
+    &:hover,&:focus{
+        color: var(--border-dark);
+        background-color: var(--text-light-1);
+        border-color: var(--border-dark);
+    }
+}
+
+/* Light Mode*/
+@media (prefers-color-scheme: light) {
+    .stacks{
+        p{
+            color:var(--text-light-1)
+        }
+    }
+}
+/* Tablet */
+@media (min-width:768px) and (orientation: portrait){
+    .card >.project-card-description{
+    text-indent: 1.6rem;
+}
+}
+
+/* Notebook */
+@media (min-width:1024px) and (orientation: landscape){
+    .card >.project-card-description{
+        text-indent: 1.8rem;
+    }
+}
