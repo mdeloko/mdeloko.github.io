@@ -7,7 +7,7 @@ const formacoesProps :ICarouselProps = {
     carouselAriaRoleDescription:"Carrossel",
     nextButtonAriaLabel:"Ir para formação a frente",
     previousButtonAriaLabel:"Voltar a formação anterior",
-    delay: 5500,
+    delay: 10000,
     active:true
 }
 const cursosProps :ICarouselProps = {
@@ -15,7 +15,7 @@ const cursosProps :ICarouselProps = {
     carouselAriaRoleDescription:"Carrossel",
     nextButtonAriaLabel:"Ir para curso a frente",
     previousButtonAriaLabel:"Voltar ao curso anterior",
-    delay: 3000,
+    delay: 6000,
     active:true
 }
 
