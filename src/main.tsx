@@ -8,13 +8,15 @@ import NotFoundPage from "@/pages/NotFound/NotFoundPage.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "@/layout.tsx";
 import "./index.css";
+import Contatos from "./pages/Contatos/contatos";
 
 const router = createBrowserRouter([
 	{ path: "/", element: <AppLayout/>, children:[
 		{ index:true , element: <Home/> },
 		{ path: "sobre", element: <Sobre/> },
 		{ path: "cursos-e-formacoes", element: <Cursos/> },
-		{ path: "projetos", element: <Projetos/> }
+		{ path: "projetos", element: <Projetos/> },
+		{ path: "contatos", element: <Contatos/> }
 	],},
 	{ path: "*", element: <NotFoundPage /> },
 ]);
