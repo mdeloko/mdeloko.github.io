@@ -1,5 +1,11 @@
 .pagina-projetos{
     padding: 1rem 1rem 3rem;
+    h2{
+        font-size: 1.2rem;
+    }
+}
+#project-page-title{
+    font-size: 2rem;
 }
 #mobile{
     display:flex;

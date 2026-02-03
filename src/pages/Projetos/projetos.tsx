@@ -1,14 +1,22 @@
 import {ProjectCard,EmblaProjectCard} from "@/components/ProjectCard/projectCard.tsx";
-import portfolioThumb from "@/assets/projects-pictures/portfolio_home_print.webp"
+import projetos from "./projetos";
 import Carousel from "@/components/Carousel/carousel";
 import "./projetos.css";
 export default function Projetos(){
 
     return(<>
-        <h2>Projetos</h2>
+        <h2 id="project-page-title">Projetos</h2>
         <hr />
         <div id="desktop" className="project-grid">
-            <ProjectCard projectName="Meu Portfólio (Este&nbsp;site)" imgPath={portfolioThumb} description="Meu site pessoal de exposição de projetos e qualidades, bem como acesso ao meu currículo." techStack={["React","Vite", "TypeScript", "GitHub Pages"]} repoUrl="https://github.com/mdeloko/mdeloko.github.io"/>
+            {projetos.map((projeto,idx)=>{
+                return <ProjectCard
+                    projectName={projeto.projectName}
+                    description={projeto.description}
+                    repoUrl={projeto.repoUrl}
+                    imgPath={projeto.imgPath}
+                    techStack={projeto.techStack}
+                    key={idx}/>
+            })}
 
         </div>
         <div id="mobile" className="project-grid">
@@ -20,7 +28,15 @@ export default function Projetos(){
                 previousButtonAriaLabel="Projeto anterior"
                 delay={4500}
             >
-                <EmblaProjectCard projectName="Meu Portfólio (Este&nbsp;site)" imgPath={portfolioThumb} description="Meu site pessoal de exposição de projetos e qualidades, bem como acesso ao meu currículo." techStack={["React","Vite", "TypeScript", "GitHub Pages"]} repoUrl="https://github.com/mdeloko/mdeloko.github.io"/>
+                {projetos.map((projeto,idx)=>{
+                return <EmblaProjectCard
+                    projectName={projeto.projectName}
+                    description={projeto.description}
+                    repoUrl={projeto.repoUrl}
+                    imgPath={projeto.imgPath}
+                    techStack={projeto.techStack}
+                    key={idx}/>
+                })}
             </Carousel>
         </div>
     </>)

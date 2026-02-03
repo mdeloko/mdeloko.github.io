@@ -2,7 +2,7 @@ import { FaScrewdriverWrench } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import "./projectCard.css"
 
-interface ICardProps{
+export interface ICardProps{
     imgPath:string;
     projectName:string;
     techStack: string[];
@@ -14,14 +14,23 @@ export function EmblaProjectCard({imgPath,projectName,techStack,description,repo
 
     return(<>
         <div className="embla__slide">
-            <div className="card">
+            <div className="card project-card">
                 <img className="project-card-thumb" src={imgPath} alt={"Miniatura do projeto "+projectName} />
-                <h2 className="project-card-title">{projectName}</h2>
+                <h3 className="project-card-title">{projectName}</h3>
                 <p className="project-card-description">{description}</p>
                 <div className="stacks">
-                    <h3 className="project-card-subtitle">Stack:</h3>{techStack.map((stack,idx)=> <p key={idx}>{stack}</p>)}
+                    <h3 className="project-card-subtitle">Stack:</h3>
+                    {techStack.map((stack,idx)=> <p key={idx}>{stack}</p>)}
                 </div>
-                <Link to={repoUrl} className="repo-button" aria-roledescription="Botão" aria-label={`Ir para repositório de projeto ${projectName}`}><FaScrewdriverWrench/>Repositório</Link>
+                <Link
+                    to={repoUrl}
+                    className="repo-button"
+                    aria-roledescription="Botão"
+                    aria-label={`Ir para repositório de projeto ${projectName}`}
+                    rel="noopener noreferrer" target="_blank"
+                >
+                    <FaScrewdriverWrench/>Repositório
+                </Link>
             </div>
         </div>
     </>)
@@ -30,7 +39,7 @@ export function EmblaProjectCard({imgPath,projectName,techStack,description,repo
 export function ProjectCard({imgPath,projectName,techStack,description,repoUrl}:ICardProps){
 
     return(<>
-        <div className="card">
+        <div className="card project-card">
             <img className="project-card-thumb" src={imgPath} alt={"Miniatura do projeto "+projectName} />
             <h2 className="project-card-title">{projectName}</h2>
             <p className="project-card-description">{description}</p>

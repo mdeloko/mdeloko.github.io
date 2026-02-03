@@ -5,7 +5,9 @@
 .project-card-title{
     margin: .5rem 0 .2rem;
     text-align: center;
+    font-size: 1rem;
 }
+
 
 .stacks{
     display: flex;
@@ -13,7 +15,7 @@
     justify-content: center;
     gap:0.3rem;
     flex-wrap: wrap;
-    margin: .4rem 0 .1rem;
+    margin: auto 0 .1rem;
     &:first-child{
         justify-self: left;
     }
@@ -47,6 +49,14 @@
         background-color: var(--text-light-1);
         border-color: var(--border-dark);
     }
+}
+.project-card{
+    max-height: 500px;
+    justify-content: flex-start;
+    img{
+        justify-self: start;
+    }
+    overflow: hidden;
 }
 
 /* Light Mode*/
