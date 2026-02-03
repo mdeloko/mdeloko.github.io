@@ -21,7 +21,7 @@ const cursosProps :ICarouselProps = {
 
 export default function Cursos(){
     return(<>
-        <h1>Formações:</h1>
+        <h1>Formações</h1>
         <hr />
         <Carousel
             carouselAriaLabel={formacoesProps.carouselAriaLabel}
@@ -35,7 +35,7 @@ export default function Cursos(){
             <CourseCard name="Técnico em Informática" grade="Técnico" institution="IFPR" start_date={new Date(2017,1,18)} conclusion_date={new Date("01-03-2022")}/>
             
         </Carousel>
-        <h1>Cursos e Bootcamps:</h1>
+        <h1>Cursos e Bootcamps</h1>
         <hr />
         <Carousel
             carouselAriaLabel={cursosProps.carouselAriaLabel}
@@ -52,7 +52,7 @@ export default function Cursos(){
             <CourseCard name="React Developer" grade="Curso" institution="Digital Innovation One (DIO)" start_date={new Date(2024,11,1)} conclusion_date={new Date(2025,2,31)}/>
             <CourseCard name="DevOps Fundamentals" grade="Curso" institution="Digital Innovation One (DIO)" start_date={new Date(2024,11,20)} conclusion_date={new Date(2025,0,21)}/>
         </Carousel>
-        <h1>Stacks:</h1>
+        <h1>Stacks</h1>
         <hr />
 
     </>)
