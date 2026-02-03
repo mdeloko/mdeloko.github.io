@@ -1,0 +1,90 @@
+.pagina-contatos{
+    padding: 1rem;
+}
+#contacts-title{
+    font-size: 2rem;
+}
+#contacts-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width: 90%;
+    margin-left: auto;
+    a{
+        font-size: 1.5rem;
+        color: var(--text-light-1);
+        transition: all .2s ease-in-out;
+        filter: drop-shadow(rgba(0,0,0,0.3) 2px 2px 3px);
+        text-decoration: none;
+        line-height: 1.5;
+        display: flex;
+        align-items: center;
+    }
+    a:hover, a:focus{
+        transform: translateY(-.2rem);
+    }
+    a:visited{
+        color: var(--text-light-1);
+    }
+    #linkedin:hover .color-change,
+    #linkedin:focus .color-change{
+        color: #0a66c2;
+    }
+    #github:hover .color-change,
+    #github:focus .color-change {
+        color: #151b23;
+    }
+    #instagram:hover svg,
+    #instagram:focus svg {
+        fill: url(#instagram-gradient);
+    }
+    #instagram:hover .color-change:first-child,
+    #instagram:focus .color-change:first-child{
+        color: #f9ce34;
+    }
+    #instagram:hover .color-change:last-child,
+    #instagram:focus .color-change:last-child{
+        color: #6228d7;
+    }
+    #email:hover .color-change,
+    #email:focus .color-change{
+        color: var(--border-light);
+    }
+}
+
+/* Tablet */
+@media (min-width:768px) and (orientation: portrait){
+    .pagina-contatos{
+      padding: 2rem;
+      margin-bottom: 40vh;
+    }
+}
+
+/* Notebook */
+@media (min-width:1024px) and (orientation: landscape){
+    .pagina-contatos{
+      padding: 2rem;
+      margin: calc(4vh + var(--navbar-min-height)) 30vw 35vh;
+    }
+}
+
+@media (min-width:1920px) and (orientation:landscape){
+    .pagina-contatos{
+      margin: calc(4vh + var(--navbar-min-height)) 35vw 40vh;
+    }
+}
+
+/* 1440p (2K) */
+@media (min-width:2560px) and (orientation: landscape){
+    .pagina-contatos{
+      margin-bottom: 55vh;
+    }
+}
+
+/* 2160p (4K) */
+@media (min-width:3840px) and (orientation: landscape){
+    .pagina-contatos{
+      margin-bottom: 50vh;
+    }
+}
