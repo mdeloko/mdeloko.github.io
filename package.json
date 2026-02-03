@@ -7,11 +7,6 @@
   "repository": {
     "url": "https://github.com/mdeloko/mdeloko.github.io"
   },
-  "imports": {
-    "#/*": "./src/*",
-    "#components/*": "./src/components/*",
-    "#assets/*": "./src/assets/*"
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
