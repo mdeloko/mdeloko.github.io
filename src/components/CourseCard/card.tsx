@@ -1,6 +1,6 @@
 import "./card.css";
 
-interface CardProps {
+export interface ICardProps {
     name: string;
     institution: string;
     grade: "Curso"|"Gradução"|"Técnico";
@@ -8,13 +8,13 @@ interface CardProps {
     conclusion_date?: Date;
 }
 
-export default function CourseCard({
+export function EmblaCourseCard({
     name,
     institution,
     grade,
     start_date,
     conclusion_date
-    }:CardProps ){
+    }:ICardProps ){
     
     
     return(
@@ -29,6 +29,29 @@ export default function CourseCard({
                     <p><b>Concluído em:</b> {conclusion_date.toLocaleDateString("pt-BR",{dateStyle:"short"})}</p>
                     </>):<><b>Em andamento...</b></>}
                 </div>
+            </div>
+        </>
+    )
+}
+export function CourseCard({
+    name,
+    institution,
+    grade,
+    start_date,
+    conclusion_date
+    }:ICardProps ){
+    
+    
+    return(
+        <>
+            <div className="card" >
+                <h3>{name}</h3>
+                <p><b>Instituição:</b> {institution}</p>
+                <p><b>Nível:</b> {grade}</p>
+                <p><b>Início em:</b>&nbsp;{start_date.toLocaleDateString("pt-BR",{dateStyle:"short"})}</p>
+                {conclusion_date?(<>
+                <p><b>Concluído em:</b> {conclusion_date.toLocaleDateString("pt-BR",{dateStyle:"short"})}</p>
+                </>):<><b>Em andamento...</b></>}
             </div>
         </>
     )
