@@ -1,0 +1,43 @@
+.proficiency-bar-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+.progress-track{
+    filter: drop-shadow(rgba(180,180,180,0.1) 0px 3px 3px);
+    appearance: none;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1px solid var(--border-dark);
+    height: 1.3rem;
+    position: relative;
+    background-color: var(--primary-dark);
+    
+}
+
+.progress-value{
+    height: 100%;
+    transition: all .8s ease-in-out;
+    background-color: var(--accent-light);
+    border-radius: 1rem;
+    transform: translateX(-101%);
+    display: flex;
+    align-items: center;
+    span{
+        position: absolute;
+        right:var(--space);
+        text-wrap: nowrap;
+    }   
+    &.progress-appear{    
+        transform: translateX(0);    
+    }
+}
+
+/*Light Mode*/
+@media (prefers-color-scheme: light){
+    .progress-value{
+        span{
+            color:var(--text-light-1);
+        }
+    }
+}
