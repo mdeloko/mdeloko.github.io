@@ -1,6 +1,9 @@
 import "./Cursos.css";
-import CourseCard from "../../components/CourseCard/card";
-import Carousel, {type ICarouselProps} from "../../components/Carousel/carousel";
+import ProficiencyBar from "@/components/ProficiencyBar/profBar";
+import {EmblaCourseCard,CourseCard} from "@/components/CourseCard/card";
+import Carousel, {type ICarouselProps} from "@/components/Carousel/carousel";
+import { backendList, frontendList, devopsList } from "./proficiencyData";
+import { coursesList, graduationsList } from "./courseData";
 
 const formacoesProps :ICarouselProps = {
     carouselAriaLabel:"Carrossel de Cartões sobre Formações de Erik",
@@ -23,37 +26,120 @@ export default function Cursos(){
     return(<>
         <h1>Formações</h1>
         <hr />
-        <Carousel
-            carouselAriaLabel={formacoesProps.carouselAriaLabel}
-            carouselAriaRoleDescription={formacoesProps.carouselAriaRoleDescription}
-            nextButtonAriaLabel={formacoesProps.nextButtonAriaLabel}
-            previousButtonAriaLabel={formacoesProps.previousButtonAriaLabel}
-            delay={formacoesProps.delay}
-            active={formacoesProps.active}
-        >
-            <CourseCard name="Engenharia de Computação" grade="Gradução" institution="UTFPR" start_date={new Date(2022,2,1)}/>
-            <CourseCard name="Técnico em Informática" grade="Técnico" institution="IFPR" start_date={new Date(2017,1,18)} conclusion_date={new Date("01-03-2022")}/>
-            
-        </Carousel>
+        <div id="mobile">
+            <Carousel
+                carouselAriaLabel={formacoesProps.carouselAriaLabel}
+                carouselAriaRoleDescription={formacoesProps.carouselAriaRoleDescription}
+                nextButtonAriaLabel={formacoesProps.nextButtonAriaLabel}
+                previousButtonAriaLabel={formacoesProps.previousButtonAriaLabel}
+                delay={formacoesProps.delay}
+                active={formacoesProps.active}
+            >
+                {
+                    graduationsList.map((item,idx)=>{
+                        return <EmblaCourseCard
+                            key={idx}
+                            name={item.name} 
+                            grade={item.grade}
+                            institution={item.institution}
+                            start_date={item.start_date}
+                            conclusion_date={item.conclusion_date}
+                        />
+                    })
+                }            
+            </Carousel>
+        </div>
+        <div id="desktop">
+            {
+                graduationsList.map((item,idx)=>{
+                    return <CourseCard
+                        key={idx}
+                        name={item.name} 
+                        grade={item.grade}
+                        institution={item.institution}
+                        start_date={item.start_date}
+                        conclusion_date={item.conclusion_date}
+                    />
+                })
+            }
+        </div>
         <h1>Cursos e Bootcamps</h1>
         <hr />
-        <Carousel
-            carouselAriaLabel={cursosProps.carouselAriaLabel}
-            carouselAriaRoleDescription={cursosProps.carouselAriaRoleDescription}
-            nextButtonAriaLabel={cursosProps.nextButtonAriaLabel}
-            previousButtonAriaLabel={cursosProps.previousButtonAriaLabel}
-            delay={cursosProps.delay}
-            active={cursosProps.active}
-            playOnInit
-        >
-            <CourseCard name="Go Developer" grade="Curso" institution="Digital Innovation One (DIO)" start_date={new Date(2025,10,1)} conclusion_date={new Date(2026,11,28)}/>
-            <CourseCard name="Linux Fundamentals" grade="Curso" institution="Digital Innovation One (DIO)" start_date={new Date(2025,7,15)} conclusion_date={new Date(2025,8,19)}/>
-            <CourseCard name="Docker Fundamentals" grade="Curso" institution="Digital Innovation One (DIO)" start_date={new Date(2025,5,10)} conclusion_date={new Date(2025,8,10)}/>
-            <CourseCard name="React Developer" grade="Curso" institution="Digital Innovation One (DIO)" start_date={new Date(2024,11,1)} conclusion_date={new Date(2025,2,31)}/>
-            <CourseCard name="DevOps Fundamentals" grade="Curso" institution="Digital Innovation One (DIO)" start_date={new Date(2024,11,20)} conclusion_date={new Date(2025,0,21)}/>
-        </Carousel>
-        <h1>Stacks</h1>
+        <div id="mobile">
+            <Carousel
+                carouselAriaLabel={cursosProps.carouselAriaLabel}
+                carouselAriaRoleDescription={cursosProps.carouselAriaRoleDescription}
+                nextButtonAriaLabel={cursosProps.nextButtonAriaLabel}
+                previousButtonAriaLabel={cursosProps.previousButtonAriaLabel}
+                delay={cursosProps.delay}
+                active={cursosProps.active}
+                playOnInit
+            >
+                {
+                    coursesList.map((item,idx)=>{
+                        return <EmblaCourseCard
+                                    key={idx}
+                                    name={item.name}
+                                    grade={item.grade}
+                                    institution={item.institution}
+                                    start_date={item.start_date}
+                                    conclusion_date={item.conclusion_date}
+                                />
+                    })
+                }
+            </Carousel>
+        </div>
+        <div id="desktop">
+            {
+                coursesList.map((item,idx)=>{
+                    return <CourseCard
+                        key={idx}
+                        name={item.name} 
+                        grade={item.grade}
+                        institution={item.institution}
+                        start_date={item.start_date}
+                        conclusion_date={item.conclusion_date}
+                    />
+                })
+            }
+        </div>
+        <h1>Tecnologias</h1>
         <hr />
-
+        <h2>Backend</h2>
+        <hr />
+        <section className="proficiency-section">
+            {backendList.map((item,idx)=>{
+                return <ProficiencyBar key={idx} label={item.label} progressValue={item.progressValue}/>
+            })}
+        </section>
+        <small className="proficiency-section-legend">
+            * 0&nbsp;&mdash;&nbsp;3&nbsp;&#10132;&nbsp;Iniciante;&emsp;
+            4&nbsp;&mdash;&nbsp;7&nbsp;&#10132;&nbsp;Intermediário;&emsp;
+            8&nbsp;&mdash;&nbsp;10&nbsp;&#10132;&nbsp;Avançado.
+        </small>
+        <h2>Frontend</h2>
+        <hr />
+        <section className="proficiency-section">
+            {frontendList.map((item,idx)=>{
+                return <ProficiencyBar key={idx} label={item.label} progressValue={item.progressValue}/>
+            })}
+        </section>
+        <small className="proficiency-section-legend">
+            * 0&nbsp;&mdash;&nbsp;3&nbsp;&#10132;&nbsp;Iniciante;&emsp;
+            4&nbsp;&mdash;&nbsp;7&nbsp;&#10132;&nbsp;Intermediário;&emsp;
+            8&nbsp;&mdash;&nbsp;10&nbsp;&#10132;&nbsp;Avançado.
+        </small>
+        <h2>DevOps / Clouds</h2>
+        <hr />
+        <section className="proficiency-section">
+            {devopsList.map((item,idx)=>{
+                return <ProficiencyBar key={idx} label={item.label} progressValue={item.progressValue}/>
+            })}
+        </section>
+        <small className="proficiency-section-legend">
+            * 0&nbsp;&mdash;&nbsp;3&nbsp;&#10132;&nbsp;Iniciante;&emsp;
+            4&nbsp;&mdash;&nbsp;7&nbsp;&#10132;&nbsp;Intermediário;&emsp;
+            8&nbsp;&mdash;&nbsp;10&nbsp;&#10132;&nbsp;Avançado.
+        </small>
     </>)
 }
