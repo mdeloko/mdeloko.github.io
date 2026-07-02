@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 import Particles from "@tsparticles/react";
-import { /*type Container,*/ type ISourceOptions, MoveDirection, OutMode  } from "@tsparticles/engine";
+import { /*type Container,*/ MoveDirection, OutMode, type IOptions, type RecursivePartial  } from "@tsparticles/engine";
 // import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 //import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
@@ -32,83 +32,84 @@ export default function ParticleComponent() {
   },[])
 
 
-  const options: ISourceOptions = useMemo(
-    () => ({
-        autoPlay:true,
-        background: {
-            color: {
-                value: "",
-            },
-        },
-        fpsLimit: 90,
-        interactivity: {
-            events: {
-                onClick: {
-                    enable: true,
-                    mode:"repulse"
-                },
-                onHover: {
-                    enable: isPortrait?false:true,
-                    mode: "grab",
+  const options = useMemo(
+    () => (
+        {
+            autoPlay:true,
+            background: {
+                color: {
+                    value: "",
                 },
             },
-            modes: {
-                grab:{
-                    distance:300,
-                    links:{
-                        opacity:0.8,
-                    }
+            fpsLimit: 90,
+            interactivity: {
+                events: {
+                    onClick: {
+                        enable: true,
+                        mode:"repulse"
+                    },
+                    onHover: {
+                        enable: isPortrait?false:true,
+                        mode: "grab",
+                    },
                 },
-                repulse: {
-                    distance: 150,
-                    duration: 0.4,
+                modes: {
+                    grab:{
+                        distance:300,
+                        links:{
+                            opacity:0.8,
+                        }
+                    },
+                    repulse: {
+                        distance: 150,
+                        duration: 0.4,
+                    },
                 },
+                detectsOn:"window",
             },
-            detectsOn:"window",
-        },
-        particles: {
-            paint: {
-                fill: {
+            particles: {
+                paint: {
+                    fill: {
+                        color: isLightMode?"#7E1014":"#ffffff",
+                    },
+                },
+                links: {
                     color: isLightMode?"#7E1014":"#ffffff",
-                },
-            },
-            links: {
-                color: isLightMode?"#7E1014":"#ffffff",
-                distance: 125,
-                enable: true,
-                opacity: 0.6,
-                width: 1,
-            },
-            move: {
-                direction: MoveDirection.none,
-                enable: true,
-                outModes: {
-                    default: OutMode.out,
-                },
-                random: false,
-                speed: 1.5,
-                straight: false,
-            },
-            number: {
-                density: {
+                    distance: 125,
                     enable: true,
+                    opacity: 0.6,
+                    width: 1,
                 },
-                value: 60,
+                move: {
+                    direction: MoveDirection.none,
+                    enable: true,
+                    outModes: {
+                        default: OutMode.out,
+                    },
+                    random: false,
+                    speed: 1.5,
+                    straight: false,
+                },
+                number: {
+                    density: {
+                        enable: true,
+                    },
+                    value: 60,
+                },
+                opacity: {
+                    value: 0.6,
+                },
+                shape: {
+                    type: "circle",
+                },
+                size: {
+                    value: { min: 1, max: 3 },
+                },
             },
-            opacity: {
-                value: 0.6,
-            },
-            shape: {
-                type: "circle",
-            },
-            size: {
-                value: { min: 1, max: 3 },
-            },
-        },
-        style:{zIndex:"-1"},
-        detectRetina: true,
-
-    }),
+            style:{zIndex:"-1"},
+            detectRetina: true,
+        } as RecursivePartial<IOptions>
+    ),
     [isLightMode,isPortrait],
   );
 
