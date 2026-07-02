@@ -10,7 +10,7 @@ export default function AppLayout({children}:React.PropsWithChildren){
         return location.pathname.split("/")[1] || "home"
     }
     return(<>
-        <ParticleComponent/>
+        <ParticleComponent />
         <NavBar/>
         <main className={`pagina-${getPageClass()}`} >
             {children}

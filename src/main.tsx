@@ -9,6 +9,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "@/layout.tsx";
 import "./index.css";
 import Contatos from "./pages/Contatos/contatos";
+import { ParticlesProvider } from "@tsparticles/react";
+import { loadAll } from "@tsparticles/all";
+import type { Engine } from "@tsparticles/engine";
 
 const router = createBrowserRouter([
 	{ path: "/", element: <AppLayout/>, children:[
@@ -21,8 +24,14 @@ const router = createBrowserRouter([
 	{ path: "*", element: <NotFoundPage /> },
 ]);
 
+async function initEngine (engine:Engine) {
+		await loadAll(engine);
+	}
+
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
-		<RouterProvider router={router}/>
+		<ParticlesProvider init={initEngine}>
+			<RouterProvider router={router}/>
+		</ParticlesProvider>
 	</StrictMode>,
 );
