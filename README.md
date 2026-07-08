@@ -9,7 +9,6 @@ Com a filosofia mobile first para o CSS.
 - Filtragem de projetos por click em nome de tecnologia nos cards;
 - Dialog ao clicar em print de Projeto;
 - Sugestões aceitas por mim, de Andre Antonio da Silva Queiroz:
-    - Labels explicando cronologia das formações;
     - Cargas horárias dos cursos nos cards;
     - Indicativo lateral (Chevron?) para chamar o usuário para navegar em outras páginas do site, na versão PC;
 

@@ -34,16 +34,16 @@ export default function Cursos(){
                 previousButtonAriaLabel={formacoesProps.previousButtonAriaLabel}
                 delay={formacoesProps.delay}
                 active={formacoesProps.active}
-            >
+                >
                 {
                     graduationsList.map((item,idx)=>{
                         return <EmblaCourseCard
-                            key={idx}
-                            name={item.name} 
-                            grade={item.grade}
-                            institution={item.institution}
-                            start_date={item.start_date}
-                            conclusion_date={item.conclusion_date}
+                        key={idx}
+                        name={item.name} 
+                        grade={item.grade}
+                        institution={item.institution}
+                        start_date={item.start_date}
+                        conclusion_date={item.conclusion_date}
                         />
                     })
                 }            
@@ -53,16 +53,17 @@ export default function Cursos(){
             {
                 graduationsList.map((item,idx)=>{
                     return <CourseCard
-                        key={idx}
-                        name={item.name} 
-                        grade={item.grade}
-                        institution={item.institution}
-                        start_date={item.start_date}
-                        conclusion_date={item.conclusion_date}
+                    key={idx}
+                    name={item.name} 
+                    grade={item.grade}
+                    institution={item.institution}
+                    start_date={item.start_date}
+                    conclusion_date={item.conclusion_date}
                     />
                 })
             }
         </div>
+        <small>Formações organizadas em ordem cronológica decrescente.</small>
         <h1>Cursos e Bootcamps</h1>
         <hr />
         <div id="mobile">
@@ -103,6 +104,7 @@ export default function Cursos(){
                 })
             }
         </div>
+        <small>Cursos e bootcamps organizados em ordem cronológica decrescente.</small>
         <h1>Tecnologias</h1>
         <hr />
         <h2>Backend</h2>
@@ -113,7 +115,7 @@ export default function Cursos(){
             })}
         </section>
         <small className="proficiency-section-legend">
-            * 0&nbsp;&mdash;&nbsp;3&nbsp;&#10132;&nbsp;Iniciante;&emsp;
+            0&nbsp;&mdash;&nbsp;3&nbsp;&#10132;&nbsp;Iniciante;&emsp;
             4&nbsp;&mdash;&nbsp;7&nbsp;&#10132;&nbsp;Intermediário;&emsp;
             8&nbsp;&mdash;&nbsp;10&nbsp;&#10132;&nbsp;Avançado.
         </small>
@@ -125,7 +127,7 @@ export default function Cursos(){
             })}
         </section>
         <small className="proficiency-section-legend">
-            * 0&nbsp;&mdash;&nbsp;3&nbsp;&#10132;&nbsp;Iniciante;&emsp;
+            0&nbsp;&mdash;&nbsp;3&nbsp;&#10132;&nbsp;Iniciante;&emsp;
             4&nbsp;&mdash;&nbsp;7&nbsp;&#10132;&nbsp;Intermediário;&emsp;
             8&nbsp;&mdash;&nbsp;10&nbsp;&#10132;&nbsp;Avançado.
         </small>
@@ -137,7 +139,7 @@ export default function Cursos(){
             })}
         </section>
         <small className="proficiency-section-legend">
-            * 0&nbsp;&mdash;&nbsp;3&nbsp;&#10132;&nbsp;Iniciante;&emsp;
+            0&nbsp;&mdash;&nbsp;3&nbsp;&#10132;&nbsp;Iniciante;&emsp;
             4&nbsp;&mdash;&nbsp;7&nbsp;&#10132;&nbsp;Intermediário;&emsp;
             8&nbsp;&mdash;&nbsp;10&nbsp;&#10132;&nbsp;Avançado.
         </small>
