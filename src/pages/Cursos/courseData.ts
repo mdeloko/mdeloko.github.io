@@ -20,6 +20,7 @@ export const coursesList: ICardProps[] = [
     {
         name: "Go Developer",
         grade: "Curso",
+        number_of_hours: 30,
         institution: "Digital Innovation One (DIO)",
         start_date: new Date(2025,10,1),
         conclusion_date: new Date(2025,11,28),
@@ -27,6 +28,7 @@ export const coursesList: ICardProps[] = [
     {
         name: "Linux Fundamentals",
         grade: "Curso",
+        number_of_hours: 23,
         institution: "Digital Innovation One (DIO)",
         start_date: new Date(2025,7,15),
         conclusion_date: new Date(2025,8,19),
@@ -34,6 +36,7 @@ export const coursesList: ICardProps[] = [
     {
         name: "Docker Fundamentals",
         grade: "Curso",
+        number_of_hours: 15,
         institution: "Digital Innovation One (DIO)",
         start_date: new Date(2025,5,10),
         conclusion_date: new Date(2025,8,10),
@@ -41,6 +44,7 @@ export const coursesList: ICardProps[] = [
     {
         name: "React Developer",
         grade: "Curso",
+        number_of_hours: 34,
         institution: "Digital Innovation One (DIO)",
         start_date: new Date(2024,11,1),
         conclusion_date: new Date(2025,2,31),
@@ -48,6 +52,7 @@ export const coursesList: ICardProps[] = [
     {
         name: "DevOps Fundamentals",
         grade: "Curso",
+        number_of_hours: 14,
         institution: "Digital Innovation One (DIO)",
         start_date: new Date(2024,11,20),
         conclusion_date: new Date(2025,0,21),

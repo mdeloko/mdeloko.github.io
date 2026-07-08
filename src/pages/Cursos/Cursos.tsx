@@ -85,6 +85,7 @@ export default function Cursos(){
                                     institution={item.institution}
                                     start_date={item.start_date}
                                     conclusion_date={item.conclusion_date}
+                                    number_of_hours={item.number_of_hours}
                                 />
                     })
                 }
@@ -100,6 +101,7 @@ export default function Cursos(){
                         institution={item.institution}
                         start_date={item.start_date}
                         conclusion_date={item.conclusion_date}
+                        number_of_hours={item.number_of_hours}
                     />
                 })
             }

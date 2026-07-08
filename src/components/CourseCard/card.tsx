@@ -6,6 +6,7 @@ export interface ICardProps {
     grade: "Curso"|"Gradução"|"Técnico";
     start_date: Date;
     conclusion_date?: Date;
+    number_of_hours?: number;
 }
 
 export function EmblaCourseCard({
@@ -13,7 +14,8 @@ export function EmblaCourseCard({
     institution,
     grade,
     start_date,
-    conclusion_date
+    conclusion_date,
+    number_of_hours
     }:ICardProps ){
     
     
@@ -24,6 +26,9 @@ export function EmblaCourseCard({
                     <h3>{name}</h3>
                     <p><b>Instituição:</b> {institution}</p>
                     <p><b>Nível:</b> {grade}</p>
+                    {number_of_hours?(
+                        <p><b>Carga horária:</b> {number_of_hours}h</p>):<></>
+                    }
                     <p><b>Início em:</b> {start_date.toLocaleDateString("pt-BR",{dateStyle:"short"})}</p>
                     {conclusion_date?(<>
                     <p><b>Concluído em:</b> {conclusion_date.toLocaleDateString("pt-BR",{dateStyle:"short"})}</p>
@@ -38,7 +43,8 @@ export function CourseCard({
     institution,
     grade,
     start_date,
-    conclusion_date
+    conclusion_date,
+    number_of_hours
     }:ICardProps ){
     
     
@@ -48,6 +54,9 @@ export function CourseCard({
                 <h3>{name}</h3>
                 <p><b>Instituição:</b> {institution}</p>
                 <p><b>Nível:</b> {grade}</p>
+                {number_of_hours&&
+                    <p><b>Carga horária:</b> {number_of_hours}h</p>
+                }
                 <p><b>Início em:</b>&nbsp;{start_date.toLocaleDateString("pt-BR",{dateStyle:"short"})}</p>
                 {conclusion_date?(<>
                 <p><b>Concluído em:</b> {conclusion_date.toLocaleDateString("pt-BR",{dateStyle:"short"})}</p>
