@@ -4,8 +4,7 @@
 
 Com a filosofia mobile first para o CSS.
 
-### Melhorias a fazer:  
-- Melhorar o comportamento do menu mobile, trazendo o recurso de os fechar deslizando com o dedo ou clicando fora do mesmo em caso de tablet;
+### Melhorias a fazer:
 - Filtragem de projetos por click em nome de tecnologia nos cards;
 - Dialog ao clicar em print de Projeto;
 - Sugestões aceitas por mim, de Andre Antonio da Silva Queiroz:

@@ -8,7 +8,7 @@
 }
 
 .hide-menu{
-    transform: translateX(101vw);
+    transform: translateX(100%);
 }
 
 .stop-scroll{
@@ -105,6 +105,7 @@
         transition: all .2s;
         overflow: hidden;
         overscroll-behavior-y: contain;
+        touch-action: pan-y;
 
         a{
             text-decoration: none;
